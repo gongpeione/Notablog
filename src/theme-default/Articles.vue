@@ -1,9 +1,9 @@
 <template>
   <section>
     <article v-for="(article, index) in articles" :key="index">
-        <h2>{{article.title}}</h2>
-        <time>{{article.updatedAt}}</time>
-        <p>{{article.content}}</p>
+      <h2>{{article.title}}</h2>
+      <time>{{article.updatedAt}}</time>
+      <p>{{article.content}}</p>
     </article>
   </section>
 </template>

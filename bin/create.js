@@ -22,6 +22,7 @@ cmd
     Getter,
     Dispatcher
   } from 'vuex-class'
+  const Self = namespace('self')
 `
 
     const template = `<template>
