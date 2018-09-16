@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package comment;
+
+import "google/api/annotations.proto";
+
+message User {
+  int32 userId = 1;
+  string name = 2;
+  string avatar = 3;
+}
+
+message CommentRequest {
+  int32 commentId = 1;
+}
+
+message CommentResponse {
+  string code = 1;
+}
+
+service CommentService {
+  rpc AddComment (CommentRequest) returns (CommentResponse) {
+    option (google.api.http) = {
+      get: "/v1/comment"
+    };
+  }
+}
+

@@ -9,7 +9,7 @@ cmd
   .version('0.0.1')
   .arguments('<name>')
   .option('-x, --vuex', 'Import vuex-class stuff')
-  .option('-t, --theme <theme>', 'Import vuex-class stuff')
+  .option('-t, --theme <theme>', 'Specify theme')
   .action((name, option) => {
     if (!name) {
       console.error('Name is required')
