@@ -1,6 +1,6 @@
 <template>
   <section>
-    Header
+    Comments
   </section>
 </template>
 
@@ -8,5 +8,5 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class Header extends Vue {}
+export default class Comments extends Vue {}
 </script>

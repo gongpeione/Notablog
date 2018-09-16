@@ -1,4 +1,7 @@
 {
   "name": "NotaBlog",
-  "theme": "default"
+  "theme": "default",
+  "comment": {
+    "auth": "aaa"
+  }
 }

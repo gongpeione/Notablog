@@ -7,6 +7,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Articles from './Articles.vue'
+import { setAuth, getAuth } from '@/comment/'
+
 @Component({
   components: {
   Articles

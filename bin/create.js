@@ -3,17 +3,19 @@
 const cmd = require('commander')
 const fs = require('fs')
 const path = require('path')
+const Config = require('../src/config.json')
 
 cmd
   .version('0.0.1')
-  .arguments('<theme> [name]')
+  .arguments('<name>')
   .option('-x, --vuex', 'Import vuex-class stuff')
-  .action((theme, name, option) => {
-    theme = theme || 'default'
+  .option('-t, --theme <theme>', 'Import vuex-class stuff')
+  .action((name, option) => {
     if (!name) {
       console.error('Name is required')
       return
     }
+    theme = option.theme || Config.theme
     name = name.replace(/\w/, l => l.toUpperCase())
     const enableVuex = option.vuex
     const vuexTemplate = `
@@ -34,6 +36,7 @@ cmd
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 ${ enableVuex ? vuexTemplate : '' }
+@Component
 export default class ${ /[0-9]/.test(name[0]) ? `C${name}` : name } extends Vue {}
 </script>
 `
